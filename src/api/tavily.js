@@ -118,7 +118,7 @@ export async function generateBuyerIntelligence({ category, competitors, buyerRo
       id: 'questions',
       icon: '02',
       title: 'Questions buyers are asking that nobody is answering',
-      query: `${category} "does anyone know" OR "how do I" OR "is there a way to" site:reddit.com OR forum`,
+      query: `"${category}" buyers questions "how do I" OR "is there a way" OR "does anyone know" OR "looking for a tool" OR "we need something that" site:reddit.com OR site:g2.com OR site:producthunt.com`,
     },
     {
       id: 'trust',
