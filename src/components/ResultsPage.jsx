@@ -53,10 +53,15 @@ export default function ResultsPage({ results, formData, onRunAgain }) {
             Buyer Intelligence Report
           </h2>
           {formData?.category && (
-            <p className="font-sans text-sm text-text-muted">
-              {formData.category}
-              {formData.buyerRole ? ` · ${formData.buyerRole}` : ''}
-            </p>
+            <div className="flex flex-col gap-0.5 mt-1">
+              {[formData.category, formData.competitors, formData.buyerRole, formData.misunderstanding]
+                .filter(Boolean)
+                .map((line, i) => (
+                  <p key={i} className="font-sans text-sm text-text-muted leading-snug">
+                    {line}
+                  </p>
+                ))}
+            </div>
           )}
         </div>
 
